@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import SwiftUI
 
 enum FoodType: String {
     case Fruit
@@ -17,6 +18,38 @@ enum FoodType: String {
     case ReadyMeal
     case Sweets
     case Snacks
+    
+    var icon: some View {
+        var imageName: String = ""
+        var color: Color = .yellow
+        
+        switch self {
+        case .Fruit:
+            imageName = "fruitIcon"
+        case .Vegetable:
+            imageName = "vegetableIcon"
+        case .Dairy:
+            imageName = "diaryIcon"
+        case .Bread:
+            imageName = "breadIcon"
+        case .Meat:
+            imageName = "meatIcon"
+        case .ReadyMeal:
+            imageName = "readyMealIcon"
+        case .Sweets:
+            imageName = "sweetsIcon"
+        case .Snacks:
+            imageName = "snacksIcon"
+        }
+        
+        return Image(uiImage: UIImage(named: imageName) ?? UIImage())
+            .resizable()
+            .foregroundColor(.white)
+            .padding(8)
+            .background {
+                Circle().foregroundColor(color)
+            }
+    }
 }
 
 enum FoodStatus {
@@ -35,6 +68,7 @@ struct Food: Identifiable {
     var timePosted: Date
     var status: FoodStatus
     var image: UIImage
+    var description: String?
 }
 
 struct Donator: Identifiable {

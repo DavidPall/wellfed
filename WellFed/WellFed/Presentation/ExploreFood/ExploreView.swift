@@ -22,7 +22,7 @@ struct ExploreView: View {
                 .tabItem {
                     Label("Request", systemImage: "person.fill.questionmark")
                 }
-        }
+        }.navigationTitle("Explore")
     }
 }
 

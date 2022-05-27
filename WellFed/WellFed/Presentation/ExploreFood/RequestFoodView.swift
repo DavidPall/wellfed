@@ -9,7 +9,9 @@ import SwiftUI
 
 struct RequestFoodView: View {
     var body: some View {
-        Text("Request Food")
+        HStack {
+            Text("Request Food")
+        }
     }
 }
 

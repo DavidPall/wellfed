@@ -23,6 +23,8 @@
 		2E65EFD128415002003BC45C /* RequestFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD028415002003BC45C /* RequestFoodView.swift */; };
 		2E65EFD328415AFE003BC45C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD228415AFE003BC45C /* LocationManager.swift */; };
 		2E65EFD528416700003BC45C /* SearchFoodListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */; };
+		2E65EFD7284178B3003BC45C /* SelectedPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD6284178B3003BC45C /* SelectedPointView.swift */; };
+		2E65EFD928417ACA003BC45C /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD828417ACA003BC45C /* FoodDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		2E65EFD028415002003BC45C /* RequestFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFoodView.swift; sourceTree = "<group>"; };
 		2E65EFD228415AFE003BC45C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodListRowView.swift; sourceTree = "<group>"; };
+		2E65EFD6284178B3003BC45C /* SelectedPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPointView.swift; sourceTree = "<group>"; };
+		2E65EFD828417ACA003BC45C /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
+		2E65EFDA284188BE003BC45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 		2E65EFA628413A50003BC45C /* WellFed */ = {
 			isa = PBXGroup;
 			children = (
+				2E65EFDA284188BE003BC45C /* Info.plist */,
 				2E65EFA728413A50003BC45C /* WellFedApp.swift */,
 				2E65EFC428414274003BC45C /* HomeView.swift */,
 				2E65EFB528413C76003BC45C /* Presentation */,
@@ -122,6 +128,8 @@
 				2E65EFBD28413D6A003BC45C /* SearchFoodViewModel.swift */,
 				2E65EFD028415002003BC45C /* RequestFoodView.swift */,
 				2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */,
+				2E65EFD6284178B3003BC45C /* SelectedPointView.swift */,
+				2E65EFD828417ACA003BC45C /* FoodDetailView.swift */,
 			);
 			path = ExploreFood;
 			sourceTree = "<group>";
@@ -234,7 +242,9 @@
 				2E65EFCF28414FFA003BC45C /* SearchFoodView.swift in Sources */,
 				2E65EFBC28413D52003BC45C /* DonationViewModel.swift in Sources */,
 				2E65EFD128415002003BC45C /* RequestFoodView.swift in Sources */,
+				2E65EFD928417ACA003BC45C /* FoodDetailView.swift in Sources */,
 				2E65EFBA28413D41003BC45C /* DonationView.swift in Sources */,
+				2E65EFD7284178B3003BC45C /* SelectedPointView.swift in Sources */,
 				2E65EFA828413A50003BC45C /* WellFedApp.swift in Sources */,
 				2E65EFCD2841489F003BC45C /* FlagService.swift in Sources */,
 				2E65EFCA2841477F003BC45C /* Food.swift in Sources */,
@@ -374,6 +384,7 @@
 				DEVELOPMENT_TEAM = BM429P7G56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WellFed/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -406,6 +417,7 @@
 				DEVELOPMENT_TEAM = BM429P7G56;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WellFed/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Need your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

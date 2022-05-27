@@ -57,7 +57,8 @@ struct SearchFoodListRowView: View {
                 }.font(.caption)
             }
             Spacer()
-            Text("icon")
+            foodPoint.food.type.icon
+                .frame(width: 38, height: 38)
         }
     }
 }

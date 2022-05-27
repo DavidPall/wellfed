@@ -24,7 +24,9 @@ struct SearchFoodView: View {
         }
         .sheet(isPresented: $viewModel.showDetailedView) {
             if let point = viewModel.selectedPoint {
-                Text(point.food.name)
+                SelectedPointView(foodPoint: point) {
+                    
+                }
             } else {
                 EmptyView()
             }
@@ -35,10 +37,14 @@ struct SearchFoodView: View {
     private var content: some View {
         if viewModel.viewOption == .Map {
             Map(coordinateRegion: $locationManager.coordinateRegion, showsUserLocation: true, annotationItems: foodList) { foodPoint in
-                //            MapAnnotation(coordinate: foodPoint.food.location.coordinate) {
-                //                Text("asd")
-                //            }
-                MapMarker(coordinate: foodPoint.food.location.coordinate)
+                    MapAnnotation(coordinate: foodPoint.food.location.coordinate) {
+                        Button {
+                            viewModel.selectedPoint = foodPoint
+                        } label: {
+                            foodPoint.food.type.icon
+                                .frame(width: 42, height: 42)
+                        }
+                    }
             }
         } else {
             List {
