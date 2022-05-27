@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ExploreView: View {
+    
+    @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var foodService: FoodService
+    
     var body: some View {
         TabView {
-            SearchFoodView()
+            SearchFoodView(foodList: foodPointList)
                 .tabItem {
                     Label("Find", systemImage: "magnifyingglass")
                 }
@@ -19,6 +23,16 @@ struct ExploreView: View {
                     Label("Request", systemImage: "person.fill.questionmark")
                 }
         }
+    }
+}
+
+extension ExploreView {
+    var foodPointList: [FoodPoint] {
+        var filteredPointList: [FoodPoint] = []
+        for food in foodService.foodList.filter({$0.status != .Delivered}) {
+            filteredPointList.append(FoodPoint(food: food, distance: locationManager.getDistanceFrom(point: food.location)))
+        }
+        return filteredPointList
     }
 }
 

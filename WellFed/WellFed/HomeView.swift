@@ -32,20 +32,25 @@ struct HomeView: View {
                 }
             }
             NavigationLink(destination: ExploreView()) {
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(height: 200)
-                    .foregroundColor(.gray)
-                    .padding()
-                    .overlay {
-                        VStack {
-                            Image(systemName: "magnifyingglass")
-                                .font(.largeTitle)
-                                .foregroundColor(.red)
-                            Text("Explore")
-                                .foregroundColor(.black)
-                                .padding()
-                        }
+                ZStack {
+                    Image(uiImage: UIImage(named: "ExploreImage") ?? UIImage())
+                        .resizable()
+                        .overlay(Color.black.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .frame(height: 200)
+                        .foregroundColor(.gray)
+                        .padding()
+                    VStack {
+                        Image(systemName: "magnifyingglass")
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                            .shadow(radius: 2)
+                        Text("Explore")
+                            .foregroundColor(.white)
+                            .shadow(radius: 2)
+                            .padding()
                     }
+                }
             }
         }
         .navigationTitle("Select your activity")

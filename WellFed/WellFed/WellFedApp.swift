@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct WellFedApp: App {
+    
+    @StateObject private var foodService: FoodService = FoodService()
+    @StateObject private var locationManager: LocationManager = LocationManager()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -19,6 +23,8 @@ struct WellFedApp: App {
                         }
                     }
             }
+            .environmentObject(foodService)
+            .environmentObject(locationManager)
         }
     }
     
