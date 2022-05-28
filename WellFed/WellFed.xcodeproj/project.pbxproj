@@ -128,13 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				2E65EFBF28413D72003BC45C /* ExploreView.swift */,
-				2E65EFCE28414FFA003BC45C /* SearchFoodView.swift */,
-				2E65EFBD28413D6A003BC45C /* SearchFoodViewModel.swift */,
-				2E65EFD028415002003BC45C /* RequestFoodView.swift */,
-				2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */,
-				2E65EFD6284178B3003BC45C /* SelectedPointView.swift */,
-				2E65EFD828417ACA003BC45C /* FoodDetailView.swift */,
-				2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */,
+				2E65EFDF2842062A003BC45C /* Find */,
+				2E65EFE02842064C003BC45C /* Request */,
 			);
 			path = ExploreFood;
 			sourceTree = "<group>";
@@ -171,6 +166,27 @@
 				2E65EFDD28420104003BC45C /* Date+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2E65EFDF2842062A003BC45C /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				2E65EFCE28414FFA003BC45C /* SearchFoodView.swift */,
+				2E65EFBD28413D6A003BC45C /* SearchFoodViewModel.swift */,
+				2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */,
+				2E65EFD6284178B3003BC45C /* SelectedPointView.swift */,
+				2E65EFD828417ACA003BC45C /* FoodDetailView.swift */,
+				2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		2E65EFE02842064C003BC45C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				2E65EFD028415002003BC45C /* RequestFoodView.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -12,6 +12,12 @@ import CoreLocation
 final class FoodService: ObservableObject {
     @Published private var storedList: [Food] = []
     @Published var reservedFoodPoint: FoodPoint?
+    @Published var requestedFoodList: [RequestedFood] = []
+    var receivedFoodItems: [RequestedFood] = [
+        RequestedFood(name: "Whole wheat Bread", type: .Bread),
+        RequestedFood(name: "Milk 3,2%", type: .Dairy),
+        RequestedFood(name: "Lasagne", type: .ReadyMeal)
+    ]
     
     init() {
         generateFood()

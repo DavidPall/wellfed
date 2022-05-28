@@ -9,10 +9,10 @@ import Foundation
 import MapKit
 import SwiftUI
 
-enum FoodType: String {
+enum FoodType: String, CaseIterable {
     case Fruit
     case Vegetable
-    case Dairy
+    case Dairy = "Dairy & Eggs"
     case Bread
     case Meat
     case ReadyMeal
@@ -56,6 +56,12 @@ enum FoodStatus {
     case Available
     case Delivered
     case Active
+}
+
+struct RequestedFood: Identifiable {
+    let id = UUID()
+    let name: String
+    let type: FoodType
 }
 
 struct Food: Identifiable {
