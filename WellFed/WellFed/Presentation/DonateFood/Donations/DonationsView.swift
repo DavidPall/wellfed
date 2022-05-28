@@ -17,7 +17,7 @@ struct DonationsView: View {
                 content
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Image(systemName: "plus.circle").font(.title3)
+                            Image(systemName: "plus.circle")
                         }
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button {

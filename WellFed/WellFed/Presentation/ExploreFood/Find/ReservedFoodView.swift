@@ -34,6 +34,10 @@ struct ReservedFoodView: View {
                 }
             }.padding()
             cancelButton.padding(.bottom)
+            Button {
+            } label: {
+                Text("Ask for 15 more minutes.")
+            }
         }
         .padding()
         .frame(maxWidth: .infinity)

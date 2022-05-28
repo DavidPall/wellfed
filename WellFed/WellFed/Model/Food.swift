@@ -10,9 +10,9 @@ import MapKit
 import SwiftUI
 
 enum FoodType: String, CaseIterable {
+    case Dairy = "Dairy & Eggs"
     case Fruit
     case Vegetable
-    case Dairy = "Dairy & Eggs"
     case Bread
     case Meat
     case ReadyMeal
@@ -26,20 +26,28 @@ enum FoodType: String, CaseIterable {
         switch self {
         case .Fruit:
             imageName = "fruitIcon"
+            color = .green
         case .Vegetable:
             imageName = "vegetableIcon"
+            color = .green
         case .Dairy:
             imageName = "diaryIcon"
+            color = .yellow
         case .Bread:
             imageName = "breadIcon"
+            color = .brown
         case .Meat:
             imageName = "meatIcon"
+            color = .red
         case .ReadyMeal:
             imageName = "readyMealIcon"
+            color = .red
         case .Sweets:
             imageName = "sweetsIcon"
+            color = .pink
         case .Snacks:
             imageName = "snacksIcon"
+            color = .pink
         }
         
         return Image(uiImage: UIImage(named: imageName) ?? UIImage())
