@@ -48,6 +48,34 @@ extension FoodService {
             reservedFoodPoint = nil
         }
     }
+    
+    func cancelByDonator(food: Food) {
+        if let index = storedList.firstIndex(where: {$0.id == food.id}) {
+            storedList[index].status = .Available
+            if let point = reservedFoodPoint {
+                if point.food.id == food.id {
+                    reservedFoodPoint = nil
+                }
+            }
+        }
+    }
+    
+    func delete(food: Food) {
+        if let index = storedList.firstIndex(where: {$0.id == food.id}) {
+            storedList.remove(at: index)
+        }
+    }
+    
+    func delivered(food: Food) {
+        if let index = storedList.firstIndex(where: {$0.id == food.id}) {
+            storedList[index].status = .Delivered
+            if let point = reservedFoodPoint {
+                if point.food.id == food.id {
+                    reservedFoodPoint = nil
+                }
+            }
+        }
+    }
 }
 
 // MARK: - Data Source
@@ -98,7 +126,7 @@ extension FoodService {
                                 rating: 3.8),
                  location: PointOfInterest(latitude: 46.77086676681078, longitude: 23.5925658032494),
                  timePosted: Date.now.addingTimeInterval(-300),
-                 status: .Available,
+                 status: .Active,
                  image: UIImage(named: "strawberryImage") ?? UIImage()),
             Food(name: "Carrot",
                  expirationDate: Date.now.addingTimeInterval(60000),

@@ -53,9 +53,38 @@ extension DonationsView {
             Section(content: {
                 ForEach(items) { food in
                     DonatedFoodListRowView(food: food)
+                        .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
+                            Button {
+                                print("delivered")
+                                foodService.delivered(food: food)
+                            } label: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .font(.largeTitle)
+                                
+                            }.tint(.green)
+                        })
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true, content: {
+                            Button {
+                                print("Declined")
+                                foodService.cancelByDonator(food: food)
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.largeTitle)
+                            }.tint(.red)
+                        })
                 }
             }, header: {
                 Text("Reserved")
+            }, footer: {
+                HStack {
+                    Image(systemName: "arrow.right")
+                    Text("Delivered")
+                    Spacer()
+                    Text("Cancel")
+                    Image(systemName: "arrow.left")
+                }
+                .padding(.horizontal)
+                .opacity(0.3)
             })
         }
     }
@@ -67,6 +96,14 @@ extension DonationsView {
             Section(content: {
                 ForEach(items) { food in
                     DonatedFoodListRowView(food: food)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button {
+                                foodService.delete(food: food)
+                            } label: {
+                                Image(systemName: "trash.circle.fill")
+                                    .font(.largeTitle)
+                            }.tint(.red)
+                        }
                 }
             }, header: {
                 Text("Available")
