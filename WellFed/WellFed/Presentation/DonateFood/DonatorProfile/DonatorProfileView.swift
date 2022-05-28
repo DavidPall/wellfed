@@ -136,7 +136,7 @@ private var buttons: some View {
 private var statistics: some View {
     HStack {
         VStack(alignment: .leading) {
-            Text("Total donations")
+            Text("Total donations\n")
                 .font(.caption)
                 .foregroundColor(.gray)
             Text("53").font(.largeTitle)

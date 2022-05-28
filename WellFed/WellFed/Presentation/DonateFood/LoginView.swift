@@ -21,20 +21,27 @@ struct LoginView: View {
                 .padding()
             Spacer()
             VStack {
-                TextField("Username", text: .constant(""))
+                TextField("Username", text: .constant("conscious.user@wellfed.com"))
                     .padding()
                     .background {
                         RoundedRectangle(cornerRadius: 16)
                             .foregroundColor(.gray.opacity(0.2))
                     }
                     .padding([.horizontal, .top])
-                SecureField("Password", text: .constant(""))
-                    .padding()
-                    .background {
-                        RoundedRectangle(cornerRadius: 16)
-                            .foregroundColor(.gray.opacity(0.2))
-                    }
-                    .padding()
+                ZStack {
+                    SecureField("Password", text: .constant("12314215125"))
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .foregroundColor(.gray.opacity(0.2))
+                        }
+                        .padding()
+                    HStack {
+                        Spacer()
+                        Image(systemName: "eye.slash.fill").foregroundColor(.projectBlue)
+                    }.padding()
+                        .padding()
+                }
                 HStack {
                     Spacer()
                     Button("Account Recovery", action: {})

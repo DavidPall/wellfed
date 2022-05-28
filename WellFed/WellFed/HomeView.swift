@@ -34,6 +34,7 @@ struct HomeView: View {
             ExploreView(homeState: $homeState)
         }
     }
+    
     private var homeView: some View {
         VStack {
             Spacer()

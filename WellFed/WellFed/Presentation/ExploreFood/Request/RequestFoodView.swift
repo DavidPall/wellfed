@@ -53,8 +53,10 @@ struct RequestFoodView: View {
     
     private var addButton: some View {
         Button {
-            foodService.requestedFoodList.append(RequestedFood(name: name, type: foodType))
-            name = ""
+            withAnimation {
+                foodService.requestedFoodList.append(RequestedFood(name: name, type: foodType))
+                name = ""                
+            }
         } label: {
             HStack {
                 Spacer()
