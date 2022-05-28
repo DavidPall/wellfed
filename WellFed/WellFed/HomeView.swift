@@ -7,10 +7,37 @@
 
 import SwiftUI
 
+enum HomeViewState {
+    case Home
+    case Donate
+    case Explore
+}
+
 struct HomeView: View {
+    
+    @State private var homeState: HomeViewState = .Home
+    
     var body: some View {
+        content
+    }
+    
+    @ViewBuilder
+    private var content: some View {
+        switch homeState {
+        case .Home:
+            homeView
+        case .Donate:
+            DonationView(homeState: $homeState)
+        case .Explore:
+            ExploreView(homeState: $homeState)
+        }
+    }
+    
+    private var homeView: some View {
         VStack {
-            NavigationLink(destination: DonationView()) {
+            Button {
+                homeState = .Donate
+            } label: {
                 ZStack {
                     Image(uiImage: UIImage(named: "DonateImage") ?? UIImage())
                         .resizable()
@@ -30,8 +57,11 @@ struct HomeView: View {
                             .padding()
                     }
                 }
+
             }
-            NavigationLink(destination: ExploreView()) {
+            Button {
+                homeState = .Explore
+            } label: {
                 ZStack {
                     Image(uiImage: UIImage(named: "ExploreImage") ?? UIImage())
                         .resizable()
@@ -53,13 +83,7 @@ struct HomeView: View {
                 }
             }
         }
-        .navigationTitle("Select your activity")
-        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}

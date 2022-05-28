@@ -12,18 +12,19 @@ struct ExploreView: View {
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var foodService: FoodService
     
+    @Binding var homeState: HomeViewState
+    
     var body: some View {
         TabView {
-            SearchFoodView(foodList: foodPointList)
+            SearchFoodView(homeState: $homeState, foodList: foodPointList)
                 .tabItem {
                     Label("Find", systemImage: "magnifyingglass")
                 }
-            RequestFoodView()
+            RequestFoodView(homeState: $homeState)
                 .tabItem {
                     Label("Request", systemImage: "person.fill.questionmark")
                 }
         }
-        .navigationTitle("Explore")
     }
 }
 
@@ -37,11 +38,5 @@ extension ExploreView {
             guard let point1 = $0.distance, let point2 = $1.distance else { return false }
             return point1 < point2
         })
-    }
-}
-
-struct ExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExploreView()
     }
 }

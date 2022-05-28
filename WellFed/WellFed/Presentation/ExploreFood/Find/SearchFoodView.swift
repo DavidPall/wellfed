@@ -12,30 +12,44 @@ struct SearchFoodView: View {
     
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var foodService: FoodService
+    @Binding var homeState: HomeViewState
     
     @StateObject var viewModel: SearchFoodViewModel = SearchFoodViewModel()
     
     @State var foodList: [FoodPoint]
     
     var body: some View {
-        VStack {
-            if let point = foodService.reservedFoodPoint {
-                ReservedFoodView(foodPoint: point) {
-                    foodService.cancel(foodPoint: point)
+        NavigationView {
+            VStack {
+                if let point = foodService.reservedFoodPoint {
+                    ReservedFoodView(foodPoint: point) {
+                        foodService.cancel(foodPoint: point)
+                    }
+                } else {
+                    viewPicker.padding([.horizontal, .top])
+                    content
                 }
-            } else {
-                viewPicker.padding([.horizontal, .top])
-                content
             }
-        }
-        .sheet(isPresented: $viewModel.showDetailedView) {
-            if let point = viewModel.selectedPoint {
-                SelectedPointView(foodPoint: point) {
-                    foodService.reserve(foodPoint: point)
+            .sheet(isPresented: $viewModel.showDetailedView) {
+                if let point = viewModel.selectedPoint {
+                    SelectedPointView(foodPoint: point) {
+                        foodService.reserve(foodPoint: point)
+                    }
+                } else {
+                    EmptyView()
                 }
-            } else {
-                EmptyView()
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        homeState = .Home
+                    } label: {
+                        Image(systemName: "house.fill")
+                    }
+                }
+            }
+            .navigationTitle("Explore")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     

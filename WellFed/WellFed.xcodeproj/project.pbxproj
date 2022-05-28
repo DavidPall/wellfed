@@ -27,6 +27,9 @@
 		2E65EFD928417ACA003BC45C /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD828417ACA003BC45C /* FoodDetailView.swift */; };
 		2E65EFDC2841FF55003BC45C /* ReservedFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */; };
 		2E65EFDE28420104003BC45C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFDD28420104003BC45C /* Date+Extensions.swift */; };
+		2E65EFE4284214E1003BC45C /* DonatorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFE3284214E1003BC45C /* DonatorProfileView.swift */; };
+		2E65EFE6284214FE003BC45C /* DonationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFE5284214FE003BC45C /* DonationsView.swift */; };
+		2E65EFE828421811003BC45C /* DonatedFoodListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFE728421811003BC45C /* DonatedFoodListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		2E65EFDA284188BE003BC45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedFoodView.swift; sourceTree = "<group>"; };
 		2E65EFDD28420104003BC45C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2E65EFE3284214E1003BC45C /* DonatorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonatorProfileView.swift; sourceTree = "<group>"; };
+		2E65EFE5284214FE003BC45C /* DonationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationsView.swift; sourceTree = "<group>"; };
+		2E65EFE728421811003BC45C /* DonatedFoodListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonatedFoodListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,8 @@
 			children = (
 				2E65EFB928413D41003BC45C /* DonationView.swift */,
 				2E65EFBB28413D52003BC45C /* DonationViewModel.swift */,
+				2E65EFE2284214B6003BC45C /* DonatorProfile */,
+				2E65EFE1284214A3003BC45C /* Donations */,
 			);
 			path = DonateFood;
 			sourceTree = "<group>";
@@ -187,6 +195,23 @@
 				2E65EFD028415002003BC45C /* RequestFoodView.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		2E65EFE1284214A3003BC45C /* Donations */ = {
+			isa = PBXGroup;
+			children = (
+				2E65EFE5284214FE003BC45C /* DonationsView.swift */,
+				2E65EFE728421811003BC45C /* DonatedFoodListRowView.swift */,
+			);
+			path = Donations;
+			sourceTree = "<group>";
+		};
+		2E65EFE2284214B6003BC45C /* DonatorProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2E65EFE3284214E1003BC45C /* DonatorProfileView.swift */,
+			);
+			path = DonatorProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E65EFBE28413D6A003BC45C /* SearchFoodViewModel.swift in Sources */,
+				2E65EFE828421811003BC45C /* DonatedFoodListRowView.swift in Sources */,
 				2E65EFC528414274003BC45C /* HomeView.swift in Sources */,
 				2E65EFCF28414FFA003BC45C /* SearchFoodView.swift in Sources */,
 				2E65EFBC28413D52003BC45C /* DonationViewModel.swift in Sources */,
@@ -271,9 +297,11 @@
 				2E65EFCD2841489F003BC45C /* FlagService.swift in Sources */,
 				2E65EFDC2841FF55003BC45C /* ReservedFoodView.swift in Sources */,
 				2E65EFDE28420104003BC45C /* Date+Extensions.swift in Sources */,
+				2E65EFE4284214E1003BC45C /* DonatorProfileView.swift in Sources */,
 				2E65EFCA2841477F003BC45C /* Food.swift in Sources */,
 				2E65EFD528416700003BC45C /* SearchFoodListRowView.swift in Sources */,
 				2E65EFC82841477A003BC45C /* FoodService.swift in Sources */,
+				2E65EFE6284214FE003BC45C /* DonationsView.swift in Sources */,
 				2E65EFC228413D7D003BC45C /* ProfileView.swift in Sources */,
 				2E65EFC028413D72003BC45C /* ExploreView.swift in Sources */,
 				2E65EFD328415AFE003BC45C /* LocationManager.swift in Sources */,

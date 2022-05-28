@@ -13,11 +13,6 @@ final class FoodService: ObservableObject {
     @Published private var storedList: [Food] = []
     @Published var reservedFoodPoint: FoodPoint?
     @Published var requestedFoodList: [RequestedFood] = []
-    var receivedFoodItems: [RequestedFood] = [
-        RequestedFood(name: "Whole wheat Bread", type: .Bread),
-        RequestedFood(name: "Milk 3,2%", type: .Dairy),
-        RequestedFood(name: "Lasagne", type: .ReadyMeal)
-    ]
     
     init() {
         generateFood()
@@ -30,6 +25,12 @@ final class FoodService: ObservableObject {
     func getDonatorList(name: String) -> [Food] {
         return storedList.filter({ $0.owner.name == name })
     }
+    
+    var receivedFoodItems: [RequestedFood] = [
+        RequestedFood(name: "Whole wheat Bread", type: .Bread),
+        RequestedFood(name: "Milk 3,2%", type: .Dairy),
+        RequestedFood(name: "Lasagne", type: .ReadyMeal)
+    ]
 }
 
 // MARK: - View helpers
@@ -43,7 +44,7 @@ extension FoodService {
     
     func cancel(foodPoint: FoodPoint) {
         if let index = storedList.firstIndex(where: {$0.id == foodPoint.food.id}) {
-            storedList[index].status = .Active
+            storedList[index].status = .Available
             reservedFoodPoint = nil
         }
     }
@@ -70,7 +71,7 @@ extension FoodService {
                                 rating: 3.8),
                  location: PointOfInterest(latitude: 46.7826701876647, longitude: 23.620124396235546),
                  timePosted: Date.now.addingTimeInterval(-1200),
-                 status: .Available,
+                 status: .Delivered,
                  image: UIImage(named: "eggsImage") ?? UIImage()),
             Food(name: "Chips",
                  expirationDate: Date.now.addingTimeInterval(90000),

@@ -10,16 +10,29 @@ import SwiftUI
 struct RequestFoodView: View {
     
     @EnvironmentObject var foodService: FoodService
+    @Binding var homeState: HomeViewState
     
     @State private var name: String = ""
     @State private var foodType: FoodType = .ReadyMeal
     
     var body: some View {
-        Form {
-            addSection
-            addButton.listRowBackground(Color.clear)
-            viewSection
-            history
+        NavigationView {
+            Form {
+                addSection
+                addButton.listRowBackground(Color.clear)
+                viewSection
+                history
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        homeState = .Home
+                    } label: {
+                        Image(systemName: "house.fill")
+                    }
+                }
+            }
+            .navigationTitle("Request")
         }
     }
     

@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct DonationView: View {
+    
+    @Binding var homeState: HomeViewState
+    
     var body: some View {
-        Text("Donation")
-    }
-}
-
-struct DonationView_Previews: PreviewProvider {
-    static var previews: some View {
-        DonationView()
+        TabView {
+            DonationsView(homeState: $homeState)
+                .tabItem {
+                    Label("Donate", systemImage: "suit.heart.fill")
+                }
+            DonatorProfileView(homeState: $homeState)
+                .tabItem {
+                    Label("Profile", systemImage: "person.fill")
+                }
+        }
     }
 }

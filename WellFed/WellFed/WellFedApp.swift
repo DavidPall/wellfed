@@ -15,19 +15,17 @@ struct WellFedApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeView()
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            languagePicker
-                        }
+            HomeView()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        languagePicker
                     }
-            }
-            .onAppear {
-                UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
-            }
-            .environmentObject(foodService)
-            .environmentObject(locationManager)
+                }
+                .onAppear {
+                    UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
+                }
+                .environmentObject(foodService)
+                .environmentObject(locationManager)
         }
     }
     
@@ -44,5 +42,5 @@ struct WellFedApp: App {
         }
         .padding()
     }
-
+    
 }
