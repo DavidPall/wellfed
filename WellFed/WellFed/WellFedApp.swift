@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 @main
 struct WellFedApp: App {
@@ -24,6 +25,13 @@ struct WellFedApp: App {
                 }
                 .onAppear {
                     UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
+                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                        if success {
+                            print("All set!")
+                        } else if let error = error {
+                            print(error.localizedDescription)
+                        }
+                    }
                 }
                 .environmentObject(foodService)
                 .environmentObject(locationManager)

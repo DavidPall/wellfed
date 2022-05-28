@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import UserNotifications
 
 class CreateDonationViewModel: ObservableObject {
     
@@ -30,6 +31,16 @@ class CreateDonationViewModel: ObservableObject {
     
     func getFood() -> Food? {
         if let location = location {
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Are you looking for Milk?"
+            content.subtitle = "Someone recently posted it nearby. Come and check it out!"
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            
+            UNUserNotificationCenter.current().add(request)
+            
             return Food(name: name, expirationDate: expirationDate,
                        type: type,
                        owner: Donator(name: "John Doe", rating: 3.8),
