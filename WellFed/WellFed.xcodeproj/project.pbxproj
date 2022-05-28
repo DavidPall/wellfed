@@ -35,6 +35,7 @@
 		2E65EFF028423D9E003BC45C /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFEF28423D9E003BC45C /* CameraView.swift */; };
 		2E65EFF228424D4C003BC45C /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFF128424D4C003BC45C /* LocationPicker.swift */; };
 		2E65EFF4284260CF003BC45C /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFF3284260CF003BC45C /* View+extensions.swift */; };
+		2E65EFF628426BA3003BC45C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFF528426BA3003BC45C /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		2E65EFEF28423D9E003BC45C /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		2E65EFF128424D4C003BC45C /* LocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
 		2E65EFF3284260CF003BC45C /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		2E65EFF528426BA3003BC45C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				2E65EFB928413D41003BC45C /* DonationView.swift */,
 				2E65EFBB28413D52003BC45C /* DonationViewModel.swift */,
+				2E65EFF528426BA3003BC45C /* LoginView.swift */,
 				2E65EFE2284214B6003BC45C /* DonatorProfile */,
 				2E65EFE1284214A3003BC45C /* Donations */,
 				2E65EFE928422A7B003BC45C /* CreateDonation */,
@@ -336,6 +339,7 @@
 				2E65EFD528416700003BC45C /* SearchFoodListRowView.swift in Sources */,
 				2E65EFC82841477A003BC45C /* FoodService.swift in Sources */,
 				2E65EFE6284214FE003BC45C /* DonationsView.swift in Sources */,
+				2E65EFF628426BA3003BC45C /* LoginView.swift in Sources */,
 				2E65EFF228424D4C003BC45C /* LocationPicker.swift in Sources */,
 				2E65EFC228413D7D003BC45C /* ProfileView.swift in Sources */,
 				2E65EFC028413D72003BC45C /* ExploreView.swift in Sources */,

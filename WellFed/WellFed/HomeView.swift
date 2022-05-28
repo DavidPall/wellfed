@@ -16,6 +16,7 @@ enum HomeViewState {
 struct HomeView: View {
     
     @State private var homeState: HomeViewState = .Home
+    @StateObject private var donationViewModel: DonationViewModel = DonationViewModel()
     
     var body: some View {
         content
@@ -28,6 +29,7 @@ struct HomeView: View {
             homeView
         case .Donate:
             DonationView(homeState: $homeState)
+                .environmentObject(donationViewModel)
         case .Explore:
             ExploreView(homeState: $homeState)
         }
@@ -35,6 +37,13 @@ struct HomeView: View {
     
     private var homeView: some View {
         VStack {
+            Spacer()
+            Image(uiImage: UIImage(named: "brandIcon") ?? UIImage())
+                .resizable()
+                .scaledToFit()
+                .padding()
+                .padding()
+            Spacer()
             Button {
                 homeState = .Donate
             } label: {
@@ -59,6 +68,7 @@ struct HomeView: View {
                 }
 
             }
+            Spacer()
             Button {
                 homeState = .Explore
             } label: {
@@ -82,6 +92,7 @@ struct HomeView: View {
                     }
                 }
             }
+            Spacer()
         }
         
     }

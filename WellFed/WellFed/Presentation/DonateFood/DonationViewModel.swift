@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class DonationViewModel: ObservableObject {
+    @Published var loggedIn: Bool = false
+    
+}

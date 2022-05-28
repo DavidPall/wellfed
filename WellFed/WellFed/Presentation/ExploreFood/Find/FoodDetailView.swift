@@ -35,7 +35,7 @@ struct FoodDetailView: View {
     private var generalInfo: some View {
         Section("General") {
             SectionRow(title: "Name", content: {Text(foodPoint.food.name)})
-            SectionRow(title: "Verified", content: {
+            SectionRow(title: "Trusted", content: {
                 Image(systemName: foodPoint.food.isVerified ? "checkmark.circle.fill" : "xmark.circle.fill")
                     .foregroundColor(foodPoint.food.isVerified ? .green : .red)
                     .font(.title)
