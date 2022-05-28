@@ -83,6 +83,7 @@ struct Food: Identifiable {
     var status: FoodStatus
     var image: UIImage
     var description: String?
+    var isVerified: Bool = false
 }
 
 struct Donator: Identifiable {

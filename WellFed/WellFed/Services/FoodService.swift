@@ -35,6 +35,10 @@ final class FoodService: ObservableObject {
 
 // MARK: - View helpers
 extension FoodService {
+    func add(food: Food) {
+        storedList.append(food)
+    }
+    
     func reserve(foodPoint: FoodPoint) {
         if let index = storedList.firstIndex(where: {$0.id == foodPoint.food.id}) {
             storedList[index].status = .Active
@@ -100,7 +104,8 @@ extension FoodService {
                  location: PointOfInterest(latitude: 46.7826701876647, longitude: 23.620124396235546),
                  timePosted: Date.now.addingTimeInterval(-1200),
                  status: .Delivered,
-                 image: UIImage(named: "eggsImage") ?? UIImage()),
+                 image: UIImage(named: "eggsImage") ?? UIImage(),
+                 isVerified: true),
             Food(name: "Chips",
                  expirationDate: Date.now.addingTimeInterval(90000),
                  type: .Snacks,
@@ -136,7 +141,8 @@ extension FoodService {
                  location: PointOfInterest(latitude: 46.76843769042638, longitude: 23.60165924749185),
                  timePosted: Date.now.addingTimeInterval(-400),
                  status: .Available,
-                 image: UIImage(named: "carrotImage") ?? UIImage()),
+                 image: UIImage(named: "carrotImage") ?? UIImage(),
+                 isVerified: true),
             Food(name: "Bread",
                  expirationDate: Date.now.addingTimeInterval(100000),
                  type: .Bread,
@@ -163,7 +169,8 @@ extension FoodService {
                  location: PointOfInterest(latitude: 46.77528865054036, longitude: 23.608206527258947),
                  timePosted: Date.now.addingTimeInterval(-100),
                  status: .Available,
-                 image: UIImage(named: "readyMealImage") ?? UIImage())
+                 image: UIImage(named: "readyMealImage") ?? UIImage(),
+                 isVerified: true)
         ]
     }
 }

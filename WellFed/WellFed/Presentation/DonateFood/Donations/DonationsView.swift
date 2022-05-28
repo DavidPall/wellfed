@@ -17,7 +17,9 @@ struct DonationsView: View {
                 content
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Image(systemName: "plus.circle")
+                            NavigationLink(destination: CreateDonationView(), label: {
+                                Image(systemName: "plus.circle")
+                            })
                         }
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button {

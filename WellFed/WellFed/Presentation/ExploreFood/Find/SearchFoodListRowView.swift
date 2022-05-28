@@ -58,6 +58,17 @@ struct SearchFoodListRowView: View {
             }
             Spacer()
             foodPoint.food.type.icon
+                .if(foodPoint.food.isVerified) { view in
+                    view
+                    .padding(3)
+                    .background {
+                        Circle().foregroundColor(.white)
+                            .padding(2)
+                            .background {
+                                Circle().foregroundColor(.green)
+                            }
+                    }
+                }
                 .frame(width: 38, height: 38)
         }
     }
