@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FoodDetailView: View {
     
+    @EnvironmentObject var foodService: FoodService
+
     @State var foodPoint: FoodPoint
     
     var body: some View {
@@ -65,7 +67,40 @@ struct FoodDetailView: View {
                     Image(systemName: "star.fill").foregroundColor(.yellow)
                 }
             })
-            Text("TODO: - Add other owner items")
+            donatorItems
+        }
+    }
+    
+    private var donatorItems: some View {
+        VStack(alignment: .leading) {
+            Text("Other items from this donator").foregroundColor(.gray)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(foodService.getDonatorList(name: foodPoint.food.owner.name)) { food in
+                        OtherFoodItem(food: food)
+                    }
+                }
+            }
+        }
+    }
+    
+    struct OtherFoodItem: View {
+        var food: Food
+        
+        var body: some View {
+            VStack {
+                Image(uiImage: food.image)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                Text("Expires at:").foregroundColor(.gray)
+                Text(food.expirationDate, style: .date)
+            }
+            .padding()
+            .background {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.gray).opacity(0.2)
+            }
         }
     }
 }

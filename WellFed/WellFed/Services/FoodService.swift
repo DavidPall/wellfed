@@ -11,7 +11,7 @@ import CoreLocation
 
 final class FoodService: ObservableObject {
     @Published private var storedList: [Food] = []
-    @Published var reservedFood: Food?
+    @Published var reservedFoodPoint: FoodPoint?
     
     init() {
         generateFood()
@@ -19,6 +19,27 @@ final class FoodService: ObservableObject {
     
     var foodList: [Food] {
         return storedList
+    }
+    
+    func getDonatorList(name: String) -> [Food] {
+        return storedList.filter({ $0.owner.name == name })
+    }
+}
+
+// MARK: - View helpers
+extension FoodService {
+    func reserve(foodPoint: FoodPoint) {
+        if let index = storedList.firstIndex(where: {$0.id == foodPoint.food.id}) {
+            storedList[index].status = .Active
+            reservedFoodPoint = foodPoint
+        }
+    }
+    
+    func cancel(foodPoint: FoodPoint) {
+        if let index = storedList.firstIndex(where: {$0.id == foodPoint.food.id}) {
+            storedList[index].status = .Active
+            reservedFoodPoint = nil
+        }
     }
 }
 

@@ -25,6 +25,8 @@
 		2E65EFD528416700003BC45C /* SearchFoodListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */; };
 		2E65EFD7284178B3003BC45C /* SelectedPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD6284178B3003BC45C /* SelectedPointView.swift */; };
 		2E65EFD928417ACA003BC45C /* FoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFD828417ACA003BC45C /* FoodDetailView.swift */; };
+		2E65EFDC2841FF55003BC45C /* ReservedFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */; };
+		2E65EFDE28420104003BC45C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFDD28420104003BC45C /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		2E65EFD6284178B3003BC45C /* SelectedPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPointView.swift; sourceTree = "<group>"; };
 		2E65EFD828417ACA003BC45C /* FoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailView.swift; sourceTree = "<group>"; };
 		2E65EFDA284188BE003BC45C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservedFoodView.swift; sourceTree = "<group>"; };
+		2E65EFDD28420104003BC45C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				2E65EFD428416700003BC45C /* SearchFoodListRowView.swift */,
 				2E65EFD6284178B3003BC45C /* SelectedPointView.swift */,
 				2E65EFD828417ACA003BC45C /* FoodDetailView.swift */,
+				2E65EFDB2841FF55003BC45C /* ReservedFoodView.swift */,
 			);
 			path = ExploreFood;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 		2E65EFCB2841488F003BC45C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2E65EFDD28420104003BC45C /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +253,8 @@
 				2E65EFD7284178B3003BC45C /* SelectedPointView.swift in Sources */,
 				2E65EFA828413A50003BC45C /* WellFedApp.swift in Sources */,
 				2E65EFCD2841489F003BC45C /* FlagService.swift in Sources */,
+				2E65EFDC2841FF55003BC45C /* ReservedFoodView.swift in Sources */,
+				2E65EFDE28420104003BC45C /* Date+Extensions.swift in Sources */,
 				2E65EFCA2841477F003BC45C /* Food.swift in Sources */,
 				2E65EFD528416700003BC45C /* SearchFoodListRowView.swift in Sources */,
 				2E65EFC82841477A003BC45C /* FoodService.swift in Sources */,

@@ -23,6 +23,9 @@ struct WellFedApp: App {
                         }
                     }
             }
+            .onAppear {
+                UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
+            }
             .environmentObject(foodService)
             .environmentObject(locationManager)
         }

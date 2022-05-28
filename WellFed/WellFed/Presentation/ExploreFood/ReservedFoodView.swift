@@ -1,5 +1,5 @@
 //
-//  SelectedPointView.swift
+//  ReservedFoodView.swift
 //  WellFed
 //
 //  Created by Pall David on 28.05.2022.
@@ -7,33 +7,33 @@
 
 import SwiftUI
 
-struct SelectedPointView: View {
+struct ReservedFoodView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @State var foodPoint: FoodPoint
-    var foodReserved: (() -> Void)?
+    var foodCancelled: (() -> Void)?
     
     var body: some View {
         ZStack {
             FoodDetailView(foodPoint: foodPoint)
             VStack {
                 Spacer()
-                reserveView
+                cancelView
             }
-        }.edgesIgnoringSafeArea(.bottom)
+        }
     }
-}
-
-extension SelectedPointView {
     
-    private var reserveView: some View {
+    private var cancelView: some View {
         VStack {
             HStack {
-                Text("Expires at")
+                Text("Reserved until:")
                 Spacer()
-                Text(foodPoint.food.expirationDate, style: .date).bold()
+                HStack {
+                    Text("Today, ")
+                    Text(Date.now.reservedUntil, style: .time).bold()
+                }
             }.padding()
-            reserveButton.padding(.bottom)
+            cancelButton.padding(.bottom)
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -44,12 +44,12 @@ extension SelectedPointView {
         }
     }
     
-    private var reserveButton: some View {
+    private var cancelButton: some View {
         Button {
-            foodReserved?()
+            foodCancelled?()
             presentationMode.wrappedValue.dismiss()
         } label: {
-            Text("Reserve")
+            Text("Cancel")
                 .foregroundColor(.white)
                 .padding()
                 .frame(maxWidth: .infinity)

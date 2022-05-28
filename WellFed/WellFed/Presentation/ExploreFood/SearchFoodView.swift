@@ -19,13 +19,19 @@ struct SearchFoodView: View {
     
     var body: some View {
         VStack {
-            viewPicker.padding([.horizontal, .top])
-            content
+            if let point = foodService.reservedFoodPoint {
+                ReservedFoodView(foodPoint: point) {
+                    foodService.cancel(foodPoint: point)
+                }
+            } else {
+                viewPicker.padding([.horizontal, .top])
+                content
+            }
         }
         .sheet(isPresented: $viewModel.showDetailedView) {
             if let point = viewModel.selectedPoint {
                 SelectedPointView(foodPoint: point) {
-                    
+                    foodService.reserve(foodPoint: point)
                 }
             } else {
                 EmptyView()
@@ -43,6 +49,7 @@ struct SearchFoodView: View {
                         } label: {
                             foodPoint.food.type.icon
                                 .frame(width: 42, height: 42)
+                                .shadow(radius: 3)
                         }
                     }
             }
