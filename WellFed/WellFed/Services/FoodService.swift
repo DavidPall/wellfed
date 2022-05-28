@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import UserNotifications
 
 final class FoodService: ObservableObject {
     @Published private var storedList: [Food] = []
@@ -80,6 +81,17 @@ extension FoodService {
             }
         }
     }
+    
+    func triggreNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Are you looking for Milk?"
+        content.subtitle = "Someone recently posted it nearby. Come and check it out!"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request)
+    }
 }
 
 // MARK: - Data Source
@@ -93,9 +105,9 @@ extension FoodService {
                                 rating: 3.8),
                  location: PointOfInterest(latitude: 46.767688, longitude: 23.589570),
                  timePosted: Date.now.addingTimeInterval(-1000),
-                 status: .Available,
+                 status: .Delivered,
                  image: UIImage(named: "milkImage") ?? UIImage(),
-                 description: "Amúgy a témát már be kellett küldeni nem? Csak mert itt mindneki adja az ötleteket, az előadók, hogy mit csináljanakba csapatok és nem értem miért, ha már mindneki választott témát"),
+                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
             Food(name: "Eggs",
                  expirationDate: Date.now.addingTimeInterval(120000),
                  type: .Dairy,
@@ -103,7 +115,7 @@ extension FoodService {
                                 rating: 3.8),
                  location: PointOfInterest(latitude: 46.7826701876647, longitude: 23.620124396235546),
                  timePosted: Date.now.addingTimeInterval(-1200),
-                 status: .Delivered,
+                 status: .Available,
                  image: UIImage(named: "eggsImage") ?? UIImage(),
                  isVerified: true),
             Food(name: "Chips",
@@ -159,7 +171,7 @@ extension FoodService {
                                 rating: 3.8),
                  location: PointOfInterest(latitude: 46.79527601479926, longitude: 23.61020708499229),
                  timePosted: Date.now.addingTimeInterval(-700),
-                 status: .Available,
+                 status: .Delivered,
                  image: UIImage(named: "meatImage") ?? UIImage()),
             Food(name: "Sushi",
                  expirationDate: Date.now.addingTimeInterval(130000),
@@ -170,6 +182,7 @@ extension FoodService {
                  timePosted: Date.now.addingTimeInterval(-100),
                  status: .Available,
                  image: UIImage(named: "readyMealImage") ?? UIImage(),
+                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                  isVerified: true),
             Food(name: "Apple",
                  expirationDate: Date.now.addingTimeInterval(230000),

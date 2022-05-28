@@ -9,7 +9,7 @@ import Foundation
 import MapKit
 import SwiftUI
 
-enum FoodType: String, CaseIterable {
+enum FoodType: String, CaseIterable, Equatable {
     case Dairy = "Dairy & Eggs"
     case Fruit
     case Vegetable

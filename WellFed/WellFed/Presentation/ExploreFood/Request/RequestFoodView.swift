@@ -55,7 +55,10 @@ struct RequestFoodView: View {
         Button {
             withAnimation {
                 foodService.requestedFoodList.append(RequestedFood(name: name, type: foodType))
-                name = ""                
+                if name == "Coconut Milk" {
+                    foodService.triggreNotification()
+                }
+                name = ""
             }
         } label: {
             HStack {
