@@ -15,9 +15,18 @@ struct DonatorProfileView: View {
         NavigationView {
             ScrollView {
                 content
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing, content: {
+                            Button {
+                                
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                            }
+                        })
+                    }
             }
             .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -32,16 +41,12 @@ struct DonatorProfileView: View {
     
     private var content: some View {
         VStack {
-            HStack {
-                VStack {
-                    Image(uiImage: UIImage(named: "profilePicture") ?? UIImage())
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                    Text("John Doe").font(.largeTitle).bold()
-                }
-                Spacer()
+            VStack {
+                Image(uiImage: UIImage(named: "profilePicture") ?? UIImage())
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                Text("John Doe").font(.largeTitle).bold()
             }.padding()
-                .padding(.leading)
             statistics
             tips
             Spacer()

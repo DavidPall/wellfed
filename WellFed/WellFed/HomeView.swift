@@ -34,7 +34,6 @@ struct HomeView: View {
             ExploreView(homeState: $homeState)
         }
     }
-    
     private var homeView: some View {
         VStack {
             Spacer()
@@ -44,57 +43,49 @@ struct HomeView: View {
                 .padding()
                 .padding()
             Spacer()
-            Button {
-                homeState = .Donate
-            } label: {
-                ZStack {
-                    Image(uiImage: UIImage(named: "DonateImage") ?? UIImage())
-                        .resizable()
-                        .overlay(Color.black.opacity(0.2))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .frame(height: 200)
-                        .foregroundColor(.gray)
-                        .padding()
-                    VStack {
-                        Image(systemName: "heart.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
-                            .shadow(radius: 2)
+            Group {
+                Button {
+                    homeState = .Donate
+                } label: {
+                    HStack {
                         Text("Donate")
-                            .foregroundColor(.white)
-                            .shadow(radius: 2)
-                            .padding()
-                    }
-                }
-
-            }
-            Spacer()
-            Button {
-                homeState = .Explore
-            } label: {
-                ZStack {
-                    Image(uiImage: UIImage(named: "ExploreImage") ?? UIImage())
-                        .resizable()
-                        .overlay(Color.black.opacity(0.2))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .frame(height: 200)
-                        .foregroundColor(.gray)
-                        .padding()
-                    VStack {
-                        Image(systemName: "magnifyingglass")
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
-                            .shadow(radius: 2)
+                            .foregroundStyle(
+                                LinearGradient(colors: [Color(hex: 0x4365d1), Color(hex: 0xd08775)], startPoint: .leading, endPoint: .trailing)
+                            )
+                        Spacer()
+                        Image(systemName: "suit.heart")
+                            .font(.title)
+                            .foregroundColor(Color(hex: 0x4365d1))
+                    }.padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 18)
+                                .foregroundColor(.white)
+                                .shadow(radius: 3)
+                        }
+                }.padding()
+                Button {
+                    homeState = .Explore
+                } label: {
+                    HStack {
                         Text("Explore")
-                            .foregroundColor(.white)
-                            .shadow(radius: 2)
-                            .padding()
-                    }
+                            .foregroundStyle(
+                                LinearGradient(colors: [Color(hex: 0x4365d1), Color(hex: 0xd08775)], startPoint: .leading, endPoint: .trailing)
+                            )
+                        Spacer()
+                        Image(systemName: "magnifyingglass")
+                            .font(.title)
+                            .foregroundColor(Color(hex: 0x4365d1))
+                    }.padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 18)
+                                .foregroundColor(.white)
+                                .shadow(radius: 3)
+                        }
+                        .padding()
                 }
-            }
+            }.padding(.horizontal)
             Spacer()
         }
-        
     }
 }
 
