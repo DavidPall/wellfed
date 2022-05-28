@@ -36,6 +36,9 @@
 		2E65EFF228424D4C003BC45C /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFF128424D4C003BC45C /* LocationPicker.swift */; };
 		2E65EFF4284260CF003BC45C /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFF3284260CF003BC45C /* View+extensions.swift */; };
 		2E65EFF628426BA3003BC45C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFF528426BA3003BC45C /* LoginView.swift */; };
+		2E65EFF928428BA9003BC45C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2E65EFF828428BA9003BC45C /* Lottie */; };
+		2E65EFFC28428C31003BC45C /* lightBulb.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E65EFFB28428C31003BC45C /* lightBulb.json */; };
+		2E65EFFE28428C84003BC45C /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65EFFD28428C84003BC45C /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,8 @@
 		2E65EFF128424D4C003BC45C /* LocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
 		2E65EFF3284260CF003BC45C /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
 		2E65EFF528426BA3003BC45C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2E65EFFB28428C31003BC45C /* lightBulb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lightBulb.json; sourceTree = "<group>"; };
+		2E65EFFD28428C84003BC45C /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E65EFF928428BA9003BC45C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +115,7 @@
 				2E65EFC328413D83003BC45C /* Services */,
 				2E65EFC628414702003BC45C /* Model */,
 				2E65EFCB2841488F003BC45C /* Extensions */,
-				2E65EFAB28413A54003BC45C /* Assets.xcassets */,
+				2E65EFFA28428C19003BC45C /* Resources */,
 				2E65EFAD28413A54003BC45C /* Preview Content */,
 			);
 			path = WellFed;
@@ -244,8 +250,18 @@
 			children = (
 				2E65EFEF28423D9E003BC45C /* CameraView.swift */,
 				2E65EFF128424D4C003BC45C /* LocationPicker.swift */,
+				2E65EFFD28428C84003BC45C /* LottieView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2E65EFFA28428C19003BC45C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E65EFFB28428C31003BC45C /* lightBulb.json */,
+				2E65EFAB28413A54003BC45C /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +280,9 @@
 			dependencies = (
 			);
 			name = WellFed;
+			packageProductDependencies = (
+				2E65EFF828428BA9003BC45C /* Lottie */,
+			);
 			productName = WellFed;
 			productReference = 2E65EFA428413A50003BC45C /* WellFed.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +311,9 @@
 				Base,
 			);
 			mainGroup = 2E65EF9B28413A50003BC45C;
+			packageReferences = (
+				2E65EFF728428BA9003BC45C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 2E65EFA528413A50003BC45C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E65EFAF28413A54003BC45C /* Preview Assets.xcassets in Resources */,
+				2E65EFFC28428C31003BC45C /* lightBulb.json in Resources */,
 				2E65EFAC28413A54003BC45C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +352,7 @@
 				2E65EFBA28413D41003BC45C /* DonationView.swift in Sources */,
 				2E65EFD7284178B3003BC45C /* SelectedPointView.swift in Sources */,
 				2E65EFA828413A50003BC45C /* WellFedApp.swift in Sources */,
+				2E65EFFE28428C84003BC45C /* LottieView.swift in Sources */,
 				2E65EFCD2841489F003BC45C /* FlagService.swift in Sources */,
 				2E65EFDC2841FF55003BC45C /* ReservedFoodView.swift in Sources */,
 				2E65EFDE28420104003BC45C /* Date+Extensions.swift in Sources */,
@@ -555,6 +579,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E65EFF728428BA9003BC45C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E65EFF828428BA9003BC45C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E65EFF728428BA9003BC45C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E65EF9C28413A50003BC45C /* Project object */;
 }
