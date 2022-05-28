@@ -55,7 +55,7 @@ extension SelectedPointView {
                 .frame(maxWidth: .infinity)
                 .background {
                     RoundedRectangle(cornerRadius: 16)
-                        .foregroundColor(.orange)
+                        .foregroundColor(.projectPurple)
                 }
         }
     }

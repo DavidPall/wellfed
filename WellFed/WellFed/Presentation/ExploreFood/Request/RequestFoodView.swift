@@ -63,7 +63,7 @@ struct RequestFoodView: View {
                     .padding()
                     .background {
                         RoundedRectangle(cornerRadius: 16)
-                            .foregroundColor(name.isEmpty ? .orange.opacity(0.5) : .orange)
+                            .foregroundColor(name.isEmpty ? .projectPurple.opacity(0.5) : .projectPurple)
                     }
                 Spacer()
             }

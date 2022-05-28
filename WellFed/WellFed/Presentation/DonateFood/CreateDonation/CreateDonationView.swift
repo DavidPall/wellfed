@@ -49,7 +49,6 @@ struct CreateDonationView: View {
             .sheet(isPresented: $viewModel.showMap, content: {
                 MapView(centerCoordinate: .constant(CLLocationCoordinate2D(latitude: 46.776677869219164, longitude: 23.603976326956342))) { coordinate in
                     viewModel.location = coordinate
-                    print("location2: \(viewModel.location)")
                     viewModel.showMap = false
                 }
             })
@@ -69,6 +68,7 @@ extension CreateDonationView {
                     Image(uiImage: viewModel.thumbnail ?? UIImage(named: "placeholder") ?? UIImage())
                         .resizable()
                         .frame(width: 200, height: 200)
+                        .scaledToFill()
                         .clipShape(Circle())
                 }
                 Spacer()

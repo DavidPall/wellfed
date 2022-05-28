@@ -52,10 +52,13 @@ struct LoginView: View {
                     }
                     .padding()
             }
+            Spacer()
             HStack {
                 Text("Not a member?")
                 Button("Register now", action: {})
             }
+            NavigationLink("Terms and Conditions", destination: {})
+                .foregroundColor(.projectBlue).padding()
             Spacer()
         }
     }

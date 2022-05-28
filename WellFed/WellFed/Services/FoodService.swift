@@ -170,7 +170,16 @@ extension FoodService {
                  timePosted: Date.now.addingTimeInterval(-100),
                  status: .Available,
                  image: UIImage(named: "readyMealImage") ?? UIImage(),
-                 isVerified: true)
+                 isVerified: true),
+            Food(name: "Apple",
+                 expirationDate: Date.now.addingTimeInterval(230000),
+                 type: .Fruit,
+                 owner: Donator(name: "John Doe",
+                                rating: 3.8),
+                 location: PointOfInterest(latitude: 46.75661018761662, longitude: 23.544430560893684),
+                 timePosted: Date.now.addingTimeInterval(-500),
+                 status: .Available,
+                 image: UIImage(named: "appleImage") ?? UIImage())
         ]
     }
 }

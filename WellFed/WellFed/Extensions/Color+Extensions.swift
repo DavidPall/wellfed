@@ -17,4 +17,10 @@ extension Color {
             opacity: alpha
         )
     }
+    
+    static let projectWhite = Color("projectWhite")
+    static let projectPurple = Color("projectPurple")
+    static let projectLightBrown = Color("projectLightBrown")
+    static let projectBrown = Color("projectBrown")
+    static let projectBlue = Color("projectBlue")
 }

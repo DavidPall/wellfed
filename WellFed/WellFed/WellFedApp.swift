@@ -16,6 +16,7 @@ struct WellFedApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .tint(Color.projectBlue)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         languagePicker
